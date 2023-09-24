@@ -27,7 +27,7 @@
     <button class="tabs__button bottom-btn" data-for-tab="5">Other</button>
 
     <div class="last-section">
-      <div class="ui blue submit button" style="font-family: 'Rock Salt', cursive; width: 100%">
+      <div class="ui blue submit button" style="font-family: 'Rock Salt', cursive; width: 100%" id="submit-button">
         <a href="#" style="color: white">Submit</a>
       </div>
     </div>
@@ -36,27 +36,32 @@
   <div class="tabs__content" data-tab="1">
     <h2 class="sub-header">Personal Info</h2>
     <div class="ui form">
-      <div class="field">
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" />
+      <%= form_with(model: PersonalInfo.new, url: personal_infos_path) do |form| %>
+        <div class="field">
+          <label for="first_name">First Name</label>
+          <%= form.text_field :first_name, id: "first_name", name: "personal_information[first_name]" %>
+        </div>
+        <div class="field">
+          <label for="last_name">Last Name</label>
+          <%= form.text_field :last_name, id: "last_name", name: "personal_information[last_name]" %>
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <%= form.text_field :city, id: "city", name: "personal_information[city]" %>
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <%= form.text_field :state, id: "state", name: "personal_information[state]" %>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <%= form.text_field :phone, id: "phone", name: "personal_information[phone]" %>
+        </div>
+        <div class="actions">
+          <%= form.submit 'Save Personal Information' %>
+        </div>
+      <% end %>
       </div>
-      <div class="field">
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" />
-      </div>
-      <div class="field">
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" />
-      </div>
-      <div class="field">
-        <label for="state">State</label>
-        <input type="text" id="state" name="state" />
-      </div>
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" name="phone" />
-      </div>
-    </div>
   </div>
 
   <div class="tabs__content" data-tab="2">
