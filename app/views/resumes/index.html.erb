@@ -39,23 +39,23 @@
       <%= form_with(model: PersonalInfo.new, url: personal_infos_path) do |form| %>
         <div class="field">
           <label for="first_name">First Name</label>
-          <%= form.text_field :first_name, id: "first_name", name: "personal_information[first_name]" %>
+          <%= form.text_field :first_name, id: "first_name", name: "personal_infos[first_name]" %>
         </div>
         <div class="field">
           <label for="last_name">Last Name</label>
-          <%= form.text_field :last_name, id: "last_name", name: "personal_information[last_name]" %>
+          <%= form.text_field :last_name, id: "last_name", name: "personal_infos[last_name]" %>
         </div>
         <div class="field">
           <label for="city">City</label>
-          <%= form.text_field :city, id: "city", name: "personal_information[city]" %>
+          <%= form.text_field :city, id: "city", name: "personal_infos[city]" %>
         </div>
         <div class="field">
           <label for="state">State</label>
-          <%= form.text_field :state, id: "state", name: "personal_information[state]" %>
+          <%= form.text_field :state, id: "state", name: "personal_info[state]" %>
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <%= form.text_field :phone, id: "phone", name: "personal_information[phone]" %>
+          <%= form.text_field :phone, id: "phone", name: "personal_infos[phone]" %>
         </div>
         <div class="actions">
           <%= form.submit 'Save Personal Information' %>
@@ -67,22 +67,30 @@
   <div class="tabs__content" data-tab="2">
     <h2 class="sub-header">Work Experiences</h2>
     <div class="ui form">
-      <!-- Add a form for adding work experiences -->
-      <form id="work-experience-form">
+      <%= form_with(model: Experience.new, url: experiences_path) do |form| %>
         <div class="field">
           <label for="title">Title</label>
-          <input type="text" id="title" name="title" placeholder="Input title...">
+          <%= form.text_field :title, id: "title", name: "experience[title]", placeholder: "Job title" %>
         </div>
         <div class="field" id="description-fields">
-          <label for="description">Description</label>
-          <input type="text" name="descriptions[]" placeholder="Input description...">
+          <label for="descriptions">Descriptions</label>
+          <input type="text" name="experience[descriptions][]" placeholder="Job description">
+          <button type="button" class="remove-description">Remove</button>
         </div>
         <div class="actions">
           <button type="button" id="add-description">Add Description</button>
         </div>
-      </form>
+        <div class="actions">
+          <%= form.submit "Add Experience", class: "submit-button" %>
+          <input type="reset" value="Reset" class="reset-button" style="display: none;">
+        </div>
+      <% end %>
     </div>
+    <ul id="submitted-experiences"></ul>
   </div>
+
+
+
 
   <div class="tabs__content" data-tab="3">
     <h2 class="sub-header">Education</h2>
@@ -92,6 +100,7 @@
       </div>
     </div>
   </div>
+
   <div class="tabs__content" data-tab="4">
     <h2 class="sub-header">Skills</h2>
     <div class="ui form">
@@ -140,8 +149,39 @@
             newInput.type = "text";
             newInput.name = "descriptions[]";
             newInput.placeholder = "Input description...";
+
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.textContent = "Remove";
+
+            removeButton.addEventListener("click", () => {
+                descriptionFields.removeChild(newInput);
+                descriptionFields.removeChild(removeButton);
+
+                // Remove entry from the database (simulate the action)
+                deleteEntryFromDatabase();
+            });
             descriptionFields.appendChild(newInput);
+            descriptionFields.appendChild(removeButton);
         });
+
+        // Outputting submitted experiences
+        document.querySelector(".submit-button").addEventListener("click", () => {
+            resetButton.style.display = "block";
+
+            const title = document.querySelector('input[name="experience[title]"]').value;
+            const descriptions = document.querySelectorAll('input[name="experience[descriptions][]"]');
+
+            const listItem = document.createElement("li");
+            listItem.textContent = `Title: ${title}, Descriptions: ${Array.from(descriptions).map(input => input.value).join(", ")}`;
+
+            const submittedExperiences = document.getElementById("submitted-experiences");
+            submittedExperiences.appendChild(listItem);
+
+            document.querySelector('input[name="experience[title]"]').value = "";
+            descriptions.forEach(input => input.value = "");
+        });
+
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -149,6 +189,25 @@
 
         document.querySelectorAll(".tabs").forEach((tabsContainer) => {
             tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
+        });
+    });
+</script>
+
+<script>
+    const resetButton = document.querySelector(".reset-button");
+    const textFields = document.querySelectorAll('input[type="text"]');
+
+    // Add an event listener to the form submit button
+    document.querySelector(".submit-button").addEventListener("click", () => {
+        // Display the reset button when the form is submitted
+        resetButton.style.display = "block";
+    });
+
+    // Add event listeners to text fields to hide the reset button when input starts
+    textFields.forEach((textField) => {
+        textField.addEventListener("input", () => {
+            // Hide the reset button when the user starts typing
+            resetButton.style.display = "none";
         });
     });
 </script>
