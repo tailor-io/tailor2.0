@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Experiences</title>
+</head>
+<body>
+<h3>Experiences</h3>
+<form action="/experiences" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input name="description" placeholder="Input here...">
+  <button type="submit">ADD</button>
+</form>
+
+<h5>Experience list</h5>
+<ul>
+  <% @experiences.each do |exp| %>
+    <li>
+      <%= exp.description %>
+      <form action="/experiences/<%= exp.id %>"
+            style="display: inline;"
+            method="POST">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <input name="_method" type="hidden" value="DELETE">
+        <button type="submit">DEL</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
+</body>
+</html>

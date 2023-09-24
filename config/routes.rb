@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '', to: 'experiences#index'
+  get 'experiences', to: 'experiences#index'
+  post 'experiences', to: 'experiences#add'
+  delete 'experiences/:id', to: 'experiences#delete'
 end
