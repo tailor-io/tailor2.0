@@ -68,14 +68,17 @@
     <h2 class="sub-header">Work Experiences</h2>
     <div class="ui form">
       <!-- Add a form for adding work experiences -->
-      <form action="/experiences" method="POST">
-        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <form id="work-experience-form">
         <div class="field">
-          <label for="work_experience">Add Work Experience</label>
-          <input type="text" id="work_experience" name="description" placeholder="Input here...">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Input title...">
+        </div>
+        <div class="field" id="description-fields">
+          <label for="description">Description</label>
+          <input type="text" name="descriptions[]" placeholder="Input description...">
         </div>
         <div class="actions">
-          <button type="submit">ADD</button>
+          <button type="button" id="add-description">Add Description</button>
         </div>
       </form>
     </div>
@@ -129,6 +132,15 @@
                 button.classList.add("tabs__button--active");
                 tabToActivate.classList.add("tabs__content--active");
             });
+        });
+
+        document.getElementById("add-description").addEventListener("click", () => {
+            const descriptionFields = document.getElementById("description-fields");
+            const newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.name = "descriptions[]";
+            newInput.placeholder = "Input description...";
+            descriptionFields.appendChild(newInput);
         });
     }
 

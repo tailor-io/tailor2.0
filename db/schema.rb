@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_041539) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_061810) do
+  create_table "experience_descriptions", force: :cascade do |t|
+    t.text "content"
+    t.integer "experience_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_experience_descriptions_on_experience_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
+    t.string "title"
   end
 
   create_table "personal_infos", force: :cascade do |t|
@@ -32,4 +40,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_041539) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "experience_descriptions", "experiences"
 end
