@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_061810) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_151735) do
   create_table "experience_descriptions", force: :cascade do |t|
     t.text "content"
     t.integer "experience_id", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_061810) do
     t.string "city"
     t.string "state"
     t.string "phone"
+    t.string "user_id"
   end
 
   create_table "resumes", force: :cascade do |t|

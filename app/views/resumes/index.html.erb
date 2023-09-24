@@ -39,15 +39,15 @@
       <%= form_with(model: PersonalInfo.new, url: personal_infos_path) do |form| %>
         <div class="field">
           <label for="first_name">First Name</label>
-          <%= form.text_field :first_name, id: "first_name", name: "personal_infos[first_name]" %>
+          <%= form.text_field :first_name, id: "first_name", name: "personal_info[first_name]" %>
         </div>
         <div class="field">
           <label for="last_name">Last Name</label>
-          <%= form.text_field :last_name, id: "last_name", name: "personal_infos[last_name]" %>
+          <%= form.text_field :last_name, id: "last_name", name: "personal_info[last_name]" %>
         </div>
         <div class="field">
           <label for="city">City</label>
-          <%= form.text_field :city, id: "city", name: "personal_infos[city]" %>
+          <%= form.text_field :city, id: "city", name: "personal_info[city]" %>
         </div>
         <div class="field">
           <label for="state">State</label>
@@ -55,7 +55,7 @@
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <%= form.text_field :phone, id: "phone", name: "personal_infos[phone]" %>
+          <%= form.text_field :phone, id: "phone", name: "personal_info[phone]" %>
         </div>
         <div class="actions">
           <%= form.submit 'Save Personal Information' %>

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88049143-7bea-4d71-bbdb-192f23f210b7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/tailorApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tailorApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/experiences_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/experiences_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/personal_infos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/personal_infos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/personal_info.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/personal_info.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/resumes/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/resumes/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -339,5 +350,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tailorApp@tailorApp.rcov" NAME="tailorApp Coverage Results" MODIFIED="1695567054663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="tailorApp" />
   </component>
 </project>
