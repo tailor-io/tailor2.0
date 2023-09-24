@@ -90,8 +90,6 @@
   </div>
 
 
-
-
   <div class="tabs__content" data-tab="3">
     <h2 class="sub-header">Education</h2>
     <div class="ui form">
@@ -143,44 +141,44 @@
             });
         });
 
-        document.getElementById("add-description").addEventListener("click", () => {
-            const descriptionFields = document.getElementById("description-fields");
-            const newInput = document.createElement("input");
-            newInput.type = "text";
-            newInput.name = "descriptions[]";
-            newInput.placeholder = "Input description...";
-
-            const removeButton = document.createElement("button");
-            removeButton.type = "button";
-            removeButton.textContent = "Remove";
-
-            removeButton.addEventListener("click", () => {
-                descriptionFields.removeChild(newInput);
-                descriptionFields.removeChild(removeButton);
-
-                // Remove entry from the database (simulate the action)
-                deleteEntryFromDatabase();
-            });
-            descriptionFields.appendChild(newInput);
-            descriptionFields.appendChild(removeButton);
-        });
-
-        // Outputting submitted experiences
-        document.querySelector(".submit-button").addEventListener("click", () => {
-            resetButton.style.display = "block";
-
-            const title = document.querySelector('input[name="experience[title]"]').value;
-            const descriptions = document.querySelectorAll('input[name="experience[descriptions][]"]');
-
-            const listItem = document.createElement("li");
-            listItem.textContent = `Title: ${title}, Descriptions: ${Array.from(descriptions).map(input => input.value).join(", ")}`;
-
-            const submittedExperiences = document.getElementById("submitted-experiences");
-            submittedExperiences.appendChild(listItem);
-
-            document.querySelector('input[name="experience[title]"]').value = "";
-            descriptions.forEach(input => input.value = "");
-        });
+        // document.getElementById("add-description").addEventListener("click", () => {
+        //     const descriptionFields = document.getElementById("description-fields");
+        //     const newInput = document.createElement("input");
+        //     newInput.type = "text";
+        //     newInput.name = "descriptions[]";
+        //     newInput.placeholder = "Input description...";
+        //
+        //     const removeButton = document.createElement("button");
+        //     removeButton.type = "button";
+        //     removeButton.textContent = "Remove";
+        //
+        //     removeButton.addEventListener("click", () => {
+        //         descriptionFields.removeChild(newInput);
+        //         descriptionFields.removeChild(removeButton);
+        //
+        //         // Remove entry from the database (simulate the action)
+        //         deleteEntryFromDatabase();
+        //     });
+        //     descriptionFields.appendChild(newInput);
+        //     descriptionFields.appendChild(removeButton);
+        // });
+        //
+        // // Outputting submitted experiences
+        // document.querySelector(".submit-button").addEventListener("click", () => {
+        //     resetButton.style.display = "block";
+        //
+        //     const title = document.querySelector('input[name="experience[title]"]').value;
+        //     const descriptions = document.querySelectorAll('input[name="experience[descriptions][]"]');
+        //
+        //     const listItem = document.createElement("li");
+        //     listItem.textContent = `Title: ${title}, Descriptions: ${Array.from(descriptions).map(input => input.value).join(", ")}`;
+        //
+        //     const submittedExperiences = document.getElementById("submitted-experiences");
+        //     submittedExperiences.appendChild(listItem);
+        //
+        //     document.querySelector('input[name="experience[title]"]').value = "";
+        //     descriptions.forEach(input => input.value = "");
+        // });
 
     }
 

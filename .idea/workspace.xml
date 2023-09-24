@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88049143-7bea-4d71-bbdb-192f23f210b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tailorApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tailorApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/personal_infos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/personal_infos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/personal_info.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/personal_info.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/experiences_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/experiences_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/resumes/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/resumes/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
