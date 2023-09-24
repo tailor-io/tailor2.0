@@ -1,20 +1,17 @@
 require 'uri'
 require 'net/http'
-class PersonalInfosController < ApplicationController
 
-  @personal_info = PersonalInfo.last
-  def new
-    @personal_info = PersonalInfo.new
+class ResumeOutputController < ApplicationController
+  def index
+
   end
 
-  def create
-
-    user_id = SecureRandom.uuid
-    @personal_info = PersonalInfo.new(personal_info_params)
-    @personal_info.user_id = user_id
-
+  def submit_url
+    @resume =
+    url = params[:company_url]
+    user_id = "650f3a5e13ee8d6494714010"
     if @personal_info.save
-      uri = URI("https://tailor-mongo-back-end-c176f21f8caf.herokuapp.com/user/create")
+      uri = URI("https://tailor-job-scraper-7e4b7f88930e.herokuapp.com/scrape?url=#{CGI.escape(url)}&user-id=650f3a5e13ee8d6494714010")
 
       # Create a Net::HTTP object and configure it
       http = Net::HTTP.new(uri.host, uri.port)
@@ -22,7 +19,6 @@ class PersonalInfosController < ApplicationController
 
       # Create the HTTP request
       request = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
-      request.body = @personal_info.to_json
 
       # Send the request and get the response
       response = http.request(request)
@@ -37,11 +33,8 @@ class PersonalInfosController < ApplicationController
       # Failed to save the PersonalInfo record, return errors
       render json: { success: false, errors: @personal_info.errors.full_messages }
     end
-  end
 
-
-  private
-  def personal_info_params
-    params.require(:personal_info).permit(:user_id, :first_name, :last_name, :city, :state, :phone)
   end
 end
+
+

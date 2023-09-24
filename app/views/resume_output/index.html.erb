@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailor</title>
+
+  <!-- Icon -->
+  <link rel="icon" href="images/icon.png" />
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rock+Salt&display=swap"
+    rel="stylesheet"
+    />
+  <!-- Semantic UI -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+    />
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/resume-builder.css" />
+</head>
+<body>
+<div class="ui two column centered grid">
+  <div class="row">
+    <div class="column left">
+      <h3
+        style="
+        margin: 5%;
+          margin-bottom: 3%;
+          font-family: 'Rock Salt', cursive;
+        "
+      >
+        Summary of the Job:
+      </h3>
+      <p
+        style="
+        height: 80%;
+          width: 90%;
+          margin-left: 5%;
+          padding: 15px;
+          border: thick double #32a1ce;
+        "
+      >
+        There was something beautiful in his hate. It wasn't the hate itself
+        as it was a disgusting display of racism and intolerance. It was
+        what propelled the hate and the fact that although he had this hate,
+        he didn't understand where it came from. It was at that moment that
+        she realized that there was hope in changing him.
+      </p>
+      <div
+        class="ui labeled input"
+        style="width: 87%; margin-top: 50px; margin-left: 5%"
+      >
+        <div class="ui labeled input" style="width: 87%; margin-top: 50px; margin-left: 5%">
+          <%= form_with(model: ResumeOutput.new, url: resume_output_submit_url_path) do |form| %>
+            <div class="ui label">http://</div>
+            <%= form.text_field :company_url, placeholder: 'Company URL' %>
+            <%= form.submit 'Submit', class: 'ui blue submit button', style: 'font-family: "Rock Salt", cursive; width: 40%; margin-top: 45px; margin-left: 5%;' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="last-section">
+        <div
+          class="ui blue submit button"
+          style="
+          font-family: 'Rock Salt', cursive;
+            width: 40%;
+            margin-top: 45px;
+            margin-left: 5%;
+          "
+        >
+          <a href="#" style="color: white">Make Resume!</a>
+        </div>
+      </div>
+    </div>
+    <div class="column right" style="margin-top: 3%">
+      <object
+        data="documents/resume-sample.pdf"
+        type="application/pdf"
+        style="margin: auto"
+        width="90%"
+        height="700px"
+      >
+        <p>
+          Unable to display PDF file.
+          <a href="documents/resume-sample.pdf">Download</a>
+          instead.
+        </p>
+      </object>
+    </div>
+  </div>
+</div>
+
+<!-- Semantic UI Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+</body>
+</html>

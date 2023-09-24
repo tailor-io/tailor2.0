@@ -1,0 +1,2 @@
+class ResumeOutput < ApplicationRecord
+end
