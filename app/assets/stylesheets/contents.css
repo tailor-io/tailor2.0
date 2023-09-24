@@ -1,0 +1,93 @@
+body {
+    background-color: #34f6f2;
+    font-family: "Rock Salt", cursive;
+}
+
+.title {
+    padding: 3%;
+    padding-bottom: 1.5%;
+    font-family: "Rock Salt", cursive;
+}
+
+.tabs {
+    /* border: 1px solid #cccccc; */
+    padding-top: 1rem;
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+.tabs__sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    background: #34f6f2;
+}
+
+.tabs__button {
+    display: block;
+    padding: 20px;
+    background: #eeeeee;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    font-family: "Rock Salt", cursive;
+    text-align: center;
+}
+
+.tabs__button:active {
+    background: #eeeeee;
+}
+
+.tabs__button:not(:last-of-type) {
+    border-bottom: 1px solid #cccccc;
+}
+
+.tabs__button--active {
+    font-weight: bold;
+    border-right: 2px solid #34f6f2;
+    background: #b4b2b2;
+}
+
+.tabs__content {
+    padding: 3%;
+    padding-left: 4%;
+    font-size: 1rem;
+    display: none;
+    /* TEST */
+    width: 95%;
+    /* height: 1000px; */
+    height: 100%;
+}
+
+.tabs__content--active {
+    display: block;
+    height: 100%;
+}
+
+.tabs__content > :first-child {
+    margin-top: 0;
+    height: 100%;
+}
+
+.sub-header {
+    font-family: "Rock Salt", cursive;
+}
+
+.top-btn {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.bottom-btn {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.textarea {
+    height: 100%;
+}
+
+.last-section {
+    margin: 0 auto;
+    margin-top: 40px;
+}
