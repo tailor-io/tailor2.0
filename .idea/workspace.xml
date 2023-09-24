@@ -7,9 +7,8 @@
     <list default="true" id="88049143-7bea-4d71-bbdb-192f23f210b7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/tailorApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tailorApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/resumes/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/resumes/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +301,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695508568770</updated>
       <workItem from="1695508569911" duration="2894000" />
-      <workItem from="1695511610300" duration="13577000" />
+      <workItem from="1695511610300" duration="18901000" />
     </task>
     <servers />
   </component>

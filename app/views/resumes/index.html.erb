@@ -67,11 +67,17 @@
   <div class="tabs__content" data-tab="2">
     <h2 class="sub-header">Work Experiences</h2>
     <div class="ui form">
-      <button class="populate-button">Populate Work Experience</button>
-      <div class="field">
-        <label for="work_experience">Work Experience</label>
-        <textarea id="work_experience" name="work_experience"></textarea>
-      </div>
+      <!-- Add a form for adding work experiences -->
+      <form action="/experiences" method="POST">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <div class="field">
+          <label for="work_experience">Add Work Experience</label>
+          <input type="text" id="work_experience" name="description" placeholder="Input here...">
+        </div>
+        <div class="actions">
+          <button type="submit">ADD</button>
+        </div>
+      </form>
     </div>
   </div>
 
