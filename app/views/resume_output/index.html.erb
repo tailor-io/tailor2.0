@@ -55,7 +55,8 @@
         <div class="ui labeled input" style="width: 87%; margin-top: 50px; margin-left: 5%">
           <%= form_with(model: ResumeOutput.new, url: resume_output_submit_url_path) do |form| %>
             <div class="ui label">http://</div>
-            <%= form.text_field :company_url, placeholder: 'Company URL' %>
+            <%#= form.text_field :company_url, placeholder: 'Company URL' %>
+            <%= form.text_field :company_url, id: "company_url", name: "resume_output[company_url]" %>
             <%= form.submit 'Submit', class: 'ui blue submit button', style: 'font-family: "Rock Salt", cursive; width: 40%; margin-top: 45px; margin-left: 5%;' %>
           <% end %>
         </div>
